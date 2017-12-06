@@ -1,0 +1,12 @@
+{
+    "meetupsDS": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "mongodb://viper:viper03@localhost:27017/admin",
+    "database": "admin",
+    "password": "viper03",
+    "name": "meetupsDS",
+    "user": "viper",
+    "connector": "mongodb"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "contacts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone1": {
+      "type": "number",
+      "required": true
+    },
+    "phone2": {
+      "type": "string"
+    },
+    "relation": {
+      "type": "string"
+    },
+    "profession": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
