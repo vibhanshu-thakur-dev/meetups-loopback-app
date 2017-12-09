@@ -50,5 +50,9 @@
   "contacts": {
     "dataSource": "meetupsDS",
     "public": true
+  },
+  "assetIntrest": {
+    "dataSource": "meetupsDS",
+    "public": true
   }
 }

@@ -24,6 +24,9 @@
     },
     "purpose": {
       "type": "string"
+    },
+    "contactId": {
+      "type": "string"
     }
   },
   "validations": [],
