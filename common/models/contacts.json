@@ -18,12 +18,15 @@
       "required": true
     },
     "phone2": {
-      "type": "string"
+      "type": "number"
     },
     "relation": {
       "type": "string"
     },
     "profession": {
+      "type": "string"
+    },
+    "email": {
       "type": "string"
     }
   },
