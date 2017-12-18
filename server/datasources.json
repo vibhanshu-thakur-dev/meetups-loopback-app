@@ -8,5 +8,15 @@
     "name": "meetupsDS",
     "user": "viper",
     "connector": "mongodb"
+  },
+  "meetupsImageDS": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "mongodb://viper:viper03@localhost:27017/admin",
+    "database": "admin",
+    "password": "viper03",
+    "name": "meetupsImageDS",
+    "user": "viper",
+    "connector": "loopback-component-storage-mongo"
   }
 }

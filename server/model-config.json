@@ -54,5 +54,9 @@
   "assetIntrest": {
     "dataSource": "meetupsDS",
     "public": true
+  },
+  "container": {
+    "dataSource":"meetupsImageDS",
+    "public":true
   }
 }
