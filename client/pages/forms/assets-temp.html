@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contacts Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  
+
+  <!-- Datatables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+     
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+
+    <style>
+	
+	td.details-control {
+    background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
+}
+    
+            .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+
+    .example-modal .modal {
+      background: transparent !important;
+    }
+    
+        .select-area{
+            background-color: #eee;
+            border:1px solid #ddd;
+            display: block;
+            padding: 7px 10px;
+            text-align: left;
+            margin-top: 10px;
+        }
+        .select-area{
+            
+            margin-bottom: 0px;
+            display: inline-block;
+            width:200px;
+            max-width: 200px;
+        }
+        .btn-edit{
+            background-color: transparent;
+            border: medium none;
+            color:#34a853;
+            float:right;
+        }
+        
+       
+	.panel-heading div {
+	margin-top: -18px;
+	font-size: 15px;
+	}
+	
+	.panel-body{
+	display: none;
+	}
+         .panel-heading{
+             width:2000px;
+            max-width: 2000px;
+        }
+        .panel-title {
+  
+    margin-left: 20px;
+}
+       
+      .btn-round{
+border-radius: 17px;
+}
+        
+    </style>
+    
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../../index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>M</b>M</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Meetups</b>Manager</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="treeview active">
+          <a href="#" >
+            <i class="fa fa-dashboard"></i> <span >Assets</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+          
+        </li>
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+       Assets
+        <small>Details</small>
+      </h1>
+      
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+              
+			<div class="box-header with-border">
+            <button type="button" class="btn btn-primary btn-round Add-btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>ADD NEW ASSETS</button>
+			</div>
+				<div id="contactsTable">
+					<table id="contacts" class="display"  cellspacing="0" width="100%"/>
+				</div>		  
+		  </div>
+        
+        </div>
+      </div>
+     </section>
+    <!-- /.content -->
+      
+  </div>
+  
+  <!-- Modal for adding new contacts -->
+  <!-- ############################## -->
+  	<div class="example-modal modal fade modal-primary" id="myModal" role="dialog">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				   <div class="modal-header ">
+					   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Add New Asset</h4>
+					</div>
+					<div class="modal-body">         
+						<!-- form start --> <!--  -->
+					  <form class="form-horizontal" id="newContactForm" >
+						<div class="box-body">
+
+
+							<div class="form-group" style="padding:3%">
+							  <label for="name" class="col-sm-2 control-label">Name</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" name="name" id="name" value="Darwin Central Light House" placeholder="Name of property" required>
+							  </div>
+							</div>
+
+							<div class="form-group" style="padding:3%">
+							  <label for="owner" class="col-sm-2 control-label">Owner</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" id="owner" name="owner" placeholder="Owner of property" required  value="Darwin the 5th">
+								<!--pattern="^\d{4}-\d{3}-\d{4}$" -->
+							  </div>
+							</div>
+							  
+						   <div class="form-group" style="padding:3%">
+							  <label for="costPrice" class="col-sm-2 control-label" >Cost Price</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" id="costPrice" name="costPrice" placeholder="Cost Of Property" value="123454">
+								<!-- pattern="^\d{4}-\d{3}-\d{4}$"-->
+							  </div>
+							</div>
+							  
+							<div class="form-group" style="padding:3%">
+							  <label for="address" class="col-sm-2 control-label" >Address</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" id="address" name="address" placeholder="Address in short" value="#4,salt lake city,kolkatta">
+							  </div>
+							</div>  
+							  
+							<div class="form-group" style="padding:3%">
+							  <label for="type" class="col-sm-2 control-label" >Type of Asset</label>
+							  <div class="col-sm-10">
+							  	<select class="form-control" id="type" name="type">
+							  		<option value="">--SELECT--</option>
+							  		<option value="appartments" selected="true">Appartments(Flat)</option>
+							  		<option value="independentHouse">Independent House</option>
+							  		<option value="plot">Plot</option>
+							  	</select>
+							  </div>
+							</div>
+							  
+							<div class="form-group" style="padding:3%">
+							  <label for="purpose" class="col-sm-2 control-label" >Purpose</label>
+							  <div class="col-sm-10">
+							  	<select class="form-control" id="purpose" name="purpose">
+							  		<option value="">--SELECT--</option>
+							  		<option value="rent" selected="true">Rent</option>
+							  		<option value="sale">Sale</option>
+							  		<option value="lease">Lease</option>
+							  	</select>
+							  </div>
+							</div>
+							  
+							<div class="form-group" style="padding:3%">
+							  <label for="description" class="col-sm-2 control-label" >Description</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" id="description" name="description" placeholder="Any Other details of the property" value="Sea Facing property">
+							  </div>
+							</div>
+
+							<div class="form-group" style="padding:3%">
+							  <label for="availability" class="col-sm-2 control-label" >Availability?</label>
+							  <div class="col-sm-10">
+							  	<input type="checkbox" id="availability" name="availability" value="true" checked="true" />Available
+							  	<input type="checkbox" id="availability" name="availability" value="false"/>UnAvailable
+							  </div>
+							</div>
+
+							<div class="form-group" style="padding:3%">
+							  <label for="rate" class="col-sm-2 control-label" >Rate per Sq Feet</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" id="rate" name="rate" placeholder="Rate in INR/Sq Ft" value="2000">
+							  </div>
+							</div>
+
+							<div class="form-group" style="padding:3%">
+							  <label for="verified" class="col-sm-2 control-label" >Verified?</label>
+							  <div class="col-sm-10">
+							  	<input type="checkbox" id="verified" name="verified" value="true" checked="true" />Verfied
+							  	<input type="checkbox" id="verified" name="verified" value="false"/>un-verfied
+							  </div>
+							</div>
+
+							<div class="form-group" style="padding:3%">
+							  <label for="dateOfOwnership" class="col-sm-2 control-label" >Date Of Ownership</label>
+							  <div class="col-sm-10">
+								<input type="date" class="form-control" id="dateOfOwnership" name="dateOfOwnership" placeholder="Date" >
+							  </div>
+							</div>
+
+							<div class="form-group" style="padding:3%">
+							  <label for="size" class="col-sm-2 control-label" >Size(in Sq ft)</label>
+							  <div class="col-sm-10">
+								<input type="text" class="form-control" id="size" name="size" placeholder="Size in sq ft" value="3000">
+							  </div>
+							</div>																																																											
+
+							
+						</div><!-- end of box -->
+					</div><!-- end of modal body -->
+					<!--  modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+						<button type="button" id="submitContactForm" onclick="submitAssetsForm()" class="btn btn-outline" >Add Asset</button>
+					</div>
+						</form><!-- form end -->
+				   </div> <!-- /.modal-content -->
+			   </div><!-- /.modal-dialog -->
+			</div><!-- end of modal -->
+  <!-- ############################## -->
+  <!-- /.Modal for adding new contacts -->
+  
+      
+  <!-- /.content-wrapper -->
+  
+
+ 
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+      
+	  
+<script type="text/javascript">
+	//var baseUrl = "http://35.227.99.23/api";
+	var baseUrl = "http://localhost/api";
+	
+	//var tempAccessToken = "?access_token=ozps4JwQXYS8ByicpvYLuoOPWQMdCBXSbYqTP9HlWcAozyc0ZSXkkNIBkDiH4Inw"
+	var tempAccessToken = "?access_token=FZFqFEPQEe42dY2aqGvetddRH0szFCdBvKp1uzPqXY7Cq7iQFENDT6qegTxBJ4iU";
+
+
+
+	/** function to pull data from modal and return it in 
+	  * JSON format
+	  */	
+	function generateJsonPayload(){
+		return {  "name": $("#name").val(),
+		"owner": $("#owner").val(),
+		  "address": $("#address").val(),
+		  "costPrice": $("#costPrice").val(),
+		  "sellingPrice": $("#sellingPrice").val(),
+		  "type": $("#type").val(),
+		  "purpose": $("#purpose").val(),
+		  "description": $("#description").val(),
+		  "availability": $("#availability").val(),
+		  "rate": $("#rate").val(),
+		  "verified": $("#verified").val(),
+		  "dateOfOwnership": $("#dateOfOwnership").val(),
+		  "size": $("#size").val(),
+		  "sellingPrice":"123"
+		};
+	}
+
+	/** Function to add new contacts */
+	function submitAssetsForm(){
+		console.log(generateJsonPayload().toString());
+		var postData = generateJsonPayload();
+	
+	 $.ajax({
+		url:baseUrl + '/assets' + tempAccessToken,
+        type:'post',
+        data:postData,
+        success:function(response){
+			alert(" asset added.");
+		},
+	    error:function(){
+			alert("Sorry! Something went wrong, please try again!");
+		}
+	  });
+	};
+
+	var tableContacts = $('#contacts').DataTable({
+        "ajax": {
+            "url": baseUrl + "/assets" + tempAccessToken,
+			"dataSrc": "",
+          },
+        columns: [
+		    { "data": null ,
+			  "defaultContent":'',
+			  "className":'details-control'
+			},
+			{"data": "name","title":"Name"},
+			{ "data": "owner" ,"title":"Owner"},
+			{ "data": "type" ,"title":"Type"},
+			{ "data": "address" ,"title":"Address"},
+			{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<button class='btn btn-danger'>DELETE!</button>",
+            "className": 'delete'
+			}
+		]
+    });
+
+	
+	/** onclick listner to show request details in a inner table for contacts*/
+    $('#contacts tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = tableContacts.row( tr );
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( createTableNew(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    });
+	
+	// to delete an existing contact
+    $('#contacts tbody').on('click', 'td.delete', function () {
+        var tr = $(this).closest('tr');
+        var row = tableContacts.row( tr );
+		var result = confirm("Are you sure you want to delete this contact");
+		if(result){
+			 $.ajax({
+				url:baseUrl + '/contacts/'+row.data()['id'] + tempAccessToken,
+				type:'delete',
+				success:function(response){
+				  alert("Contact Deleted");
+				}
+			});		
+		}else{
+			console.log("do nothing");
+		}
+    });
+	
+	function createTableNew(data){
+	var table = '<table border=2 class="table">'+
+	'<tr>'+
+		'<center>'+
+			'<th colspan="2" class="primary"><center>Detailed Information</center></th>'+
+		'</center>'+
+	'</tr>';
+	
+	var details = 	
+	'<tr >'+
+	  '<td colspan=2>'+
+		'<table class="table">'+
+			'<tr>'+
+				'<td>Cost Price</td>'+
+				'<td>'+data['costPrice']+'</td>'+
+			'</tr>'+
+			'<tr>'+
+				'<td>Selling Price</td>'+
+				'<td>'+data['sellingPrice']+'</td>'+
+			'</tr>'+	
+			'<tr>'+
+				'<td>Description</td>'+
+				'<td>'+data['description']+'</td>'+
+			'</tr>'+			
+			'<tr>'+
+				'<td>Date Of Ownership</td>'+
+				'<td>'+data['dateOfOwnership']+'</td>'+
+			'</tr>'+			
+			'<tr>'+
+				'<td>Rate</td>'+
+				'<td>'+data['rate']+'</td>'+
+			'</tr>'+								
+			'<tr>'+
+				'<td>Size</td>'+
+				'<td>'+data['size']+'</td>'+
+			'</tr>'+								
+			'<tr>'+
+				'<td>Availability</td>'+
+				'<td>'+data['availability']+'</td>'+
+			'</tr>'+															
+			'<tr>'+
+				'<td>Purpose</td>'+
+				'<td>'+data['purpose']+'</td>'+
+			'</tr>'+																		
+			'<tr>'+
+				'<td>Verified</td>'+
+				'<td>'+data['verified']+'</td>'+
+			'</tr>'+																					
+		'</table>'+
+		'</td>'+
+	'</tr>';
+	
+	return table+=details + '</table>';
+
+}
+</script>    
+   
+    
+</body>
+</html>
