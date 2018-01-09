@@ -130,6 +130,30 @@ body {
         font-size: 1.25em;
         padding: 12px 0; } }
 
+header.slavehead {
+    text-align: center;
+  color: white;
+  filter: brightness(100%);
+  background-image: url("../img/header-bg.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+  header.slavehead .intro-text {
+    padding-top: 100px;
+    padding-bottom: 40px; }
+    header.slavehead .intro-text .intro-heading {
+      color: blue;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 25px;
+      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
 header.masthead {
   text-align: center;
   color: white;
@@ -142,6 +166,7 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+
   header.masthead .intro-text {
     padding-top: 150px;
     padding-bottom: 100px; }
